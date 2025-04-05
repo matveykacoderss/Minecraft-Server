@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minecraft Donate Shop</title>
+    <style>
+        /* Базовые стили */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #222;
+            color: white;
+            overflow-x: hidden;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        h1 {
+            color: #00ff00;
+            margin-top: 30px;
+            font-size: 40px;
+        }
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 50px;
+        }
+        .product {
+            background-color: #444;
+            padding: 20px;
+            border-radius: 10px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease-in-out;
+        }
+        .product:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        }
+        .product img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .price {
+            color: #ffd700;
+            font-size: 24px;
+            margin: 10px 0;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #00ff00;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: all 0.3s ease-in-out;
+        }
+        button:hover {
+            background-color: #00b300;
+        }
+        /* Анимация пузырьков */
+        .bubbles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+        .bubble {
+            width: 25px;
+            height: 25px;
+            background-color: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            animation: bubble 6s infinite linear;
+            position: absolute;
+            bottom: -50px;
+        }
+        @keyframes bubble {
+            from {transform: translateY(0); opacity: 1;}
+            to {transform: translateY(-800px); opacity: 0;}
+        }
+        /* Мини-страницы */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.7);
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            border-radius: 10px;
+            position: relative;
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .close:hover,
+        .close:focus {
+          color: black;
+          text-decoration: none;
+          cursor: pointer;
+        }
+        .modal-header {
+            padding: 2px 16px;
+            background-color: #00ff00;
+            color: white;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+        .modal-body {padding: 2px 16px;}
+        .modal-footer {
+            padding: 2px 16px;
+            background-color: #00ff00;
+            color: white;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Заголовок -->
+    <h1>Магазин донатов Minecraft</h1>
+    
+    <!-- Секция с товарами -->
+    <div class="products">
+        <!-- Сапфир -->
+        <div class="product">
+            <img src="images/sapphire.png" alt="Сапфировый пакет">
+            <p class="price">500 рублей</p>
+            <button onclick="openModal('sapphire-modal')">Подробнее</button>
+            <div class="bubbles">
+                <span class="bubble"></span>
+                <span class="bubble" style="animation-delay: 1s;"></span>
+                <span class="bubble" style="animation-delay: 2s;"></span>
+                <span class="bubble" style="animation-delay: 3s;"></span>
+                <span class="bubble" style="animation-delay: 4s;"></span>
+            </div>
+        </div>
+        
+        <!-- Рубин -->
+        <div class="product">
+            <img src="images/ruby.png" alt="Рубиновый пакет">
+            <p class="price">2000 рублей</p>
+            <button onclick="openModal('ruby-modal')">Подробнее</button>
+            <div class="bubbles">
+                <span class="bubble"></span>
+                <span class="bubble" style="animation-delay: 1s;"></span>
+                <span class="bubble" style="animation-delay: 2s;"></span>
+                <span class="bubble" style="animation-delay: 3s;"></span>
+                <span class="bubble" style="animation-delay: 4s;"></span>
+            </div>
+        </div>
+        
+        <!-- Админка -->
+        <div class="product">
+            <img src="images/admin.png" alt="Администраторский пакет">
+            <p class="price">10000 рублей</p>
+            <button onclick="openModal('admin-modal')">Подробнее</button>
+            <div class="bubbles">
+                <span class="bubble"></span>
+                <span class="bubble" style="animation-delay: 1s;"></span>
+                <span class="bubble" style="animation-delay: 2s;"></span>
+                <span class="bubble" style="animation-delay: 3s;"></span>
+                <span class="bubble" style="animation-delay: 4s;"></span>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Модальные окна -->
+    <!-- Модальное окно для Сапфира -->
+    <div id="sapphire-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close" onclick="closeModal('sapphire-modal')">&times;</span>
+                <h2>Сапфировый пакет</h2>
+            </div>
+            <div class="modal-body">
+                <p>Получите уникальные бонусы и привилегии, доступные только владельцам Сапфирового пакета!</p>
+                <ul>
+                    <li>Уникальная шапка</li>
+                    <li>Доступ к эксклюзивным командам</li>
+                    <li>Премиум-ранг на сервере</li>
+                </ul>
+            </div>
+            <div class="modal-footer">
+                <button onclick="closeModal('sapphire-modal')">Закрыть</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Модальное окно для Рубина -->
+    <div id="ruby-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close" onclick="closeModal('ruby-modal')">&times;</span>
+                <h2>Рубиновый пакет</h2>
+            </div>
+            <div class="modal-body">
+                <p>Станьте обладателем уникальных возможностей с Рубиновым пакетом!</p>
+                <ul>
+                    <li>Эксклюзивные скины</li>
+                    <li>Доступ к VIP-зонам</li>
+                    <li>Специальные чаты</li>
+                </ul>
+            </div>
+            <div class="modal-footer">
+                <button onclick="closeModal('ruby-modal')">Закрыть</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Модальное окно для Админки -->
+    <div id="admin-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close" onclick="closeModal('admin-modal')">&times;</span>
+                <h2>Администраторский пакет</h2>
+            </div>
+            <div class="modal-body">
+                <p>Управляйте игровым процессом вместе с нами
