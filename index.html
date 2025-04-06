@@ -1,1856 +1,211 @@
-<!DOCTYPE HTML>
-<html lang="ru" xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html lang="ru">
 <head>
-    
     <meta charset="UTF-8">
-    <meta name="description" content="Магазин покупки доната, привилегий, ключей, разбанов и префиксов на сервере GriefCraft.">
-    <meta name="keywords" content="GriefCraft, донат, покупка, магазин, привилегии, оплата, форскрафт, данат, купить, разбан, пожертвование, майнкрафт, сервер, minecraft">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="format-detection" content="telephone=no">
-    <link rel="shortcut icon" type="image/png" href="/styles/img/logo.png"/>
-    <link href="/styles/css/font-exo2.css?1" rel="stylesheet">
-    <link href="/styles/css/font-awesome.min.css?1" rel="stylesheet">
-    <link href="/styles/css/global.css?8" rel="stylesheet">
-    <link href="/styles/css/global-responsive.css?1" rel="stylesheet">
-    <link href="/styles/css/dropdown.css?1" rel="stylesheet">
-    <script src="/styles/js/jquery.min.js?1"></script>
-    <script src="/styles/js/jquery.easing.js?1"></script>
-    <script src="/styles/js/clipboard.min.js?1"></script>
-    <script src="/styles/js/global.js?2"></script>
-    <script src="/styles/js/script.js?6"></script>
-    <script src="/styles/js/modal.js?1"></script>
-    <script src="/styles/js/dropdown.js?1"></script>
-    <link href='https://fonts.googleapis.com/css?family=Ubuntu&display=swap&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-
-    <title>GriefCraft - Покупка доната, привилегий</title>
-    <link href="/styles/css/main-css/style.css?28" rel="stylesheet">
-    <link href="/styles/css/main-css/style-responsive.css" rel="stylesheet">
+    <title>Меню "Обо мне"</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<header class="header">
-    <div class="container">
-        <div class="navbar">
-            <a href="/" rel="nofollow" class="navbar-mobile"><i class="fa fa-bars"></i></a>
-            <div class="navbar-wrapper">
-                <div class="block-left">
-                    <a href="/" class="logo" rel="nofollow">
-                        <div class="block-left">
-                            <div class="logo-lt">G</div>
-                            <div class="logo-rb">C</div>
-                        </div>
-                        <div class="block-logo-right">
-                            <span class="col-deep-purple">G</span>rief<span class="col-black">C</span>raft
-                        </div>
-                    </a>
-                </div>
-
-                <div class="block-center"></div>
-
-                <div class="block-right">
-                    <ul>
-                        <li class="active"><a href="/" rel="nofollow"><i class="fa fa-shopping-basket"></i>Главная</a></li>
-
-                        <li><a href="/rules"><i class="fa fa-question-circle"></i> Правила</a></li>
-
-                        <li><a href="/donate" rel="nofollow"><i class="fa fa-file-text"></i> Описание доната</a></li>
-
-                        <li><a href="/skins" rel="nofollow"><i class="fa fa-user"></i> HD Скины</a></li>
-
-                        <li><a href="/capes" rel="nofollow"><i class="fa fa-bookmark"></i> HD Плащи</a></li>
-
-                        <li><a href="https://tlauncher.org/" rel="nofollow"><i class="fa fa-gamepad"></i> Лаунчер</a></li><li>
-                        <a href="/" class="dd-trigger" data-target="#navdropdown" rel="nofollow"><i class="fa fa-caret-down"></i> Другое</a>
-
-                        <div class="dd" id="navdropdown">
-                            <ul>
-                                <li><a href="https://vk.com/griefserv" rel="nofollow" target="_blank"><i class="fa fa-vk"></i> Группа ВК</a></li>
-                                <li><a href="/topbw"><i class="fa fa-star"></i> ТОП BedWars</a></li>
-                                <li><a href="/topsw"><i class="fa fa-gamepad"></i> ТОП SkyWars</a></li>
-                                <li class=""><a href="/howtobuy"><i class="fa fa-info-circle"></i> Как купить донат</a></li>
-                                <li><a href="https://vk.me/griefserv" target="_blank" rel="nofollow"><i class="fa fa-ticket"></i> Поддержка</a></li>
-                            </ul>
-                        </div>
-                    </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</header>
-<div class="container">
-    <div class="tabs">
-        <div class="tabs-wrapper">
-            <div class="block-left">
-                <ul class="tab-links">
-                    
-                        <li class="active" data-id="survival">
-                            <a href="/" rel="nofollow">
-                                <span class="block-left"><i class="fa fa-server"></i></span>
-                                <span class="block-right">Выживание</span>
-                            </a>
-                        </li>
-                    
-                    
-                        <li data-id="anarchy">
-                            <a href="/" rel="nofollow">
-                                <span class="block-left"><i class="fa fa-server"></i></span>
-                                <span class="block-right">Анархия</span>
-                            </a>
-                        </li>
-                    
-                    
-                        <li data-id="skyblock">
-                            <a href="/" rel="nofollow">
-                                <span class="block-left"><i class="fa fa-server"></i></span>
-                                <span class="block-right">SkyBlock</span>
-                            </a>
-                        </li>
-                    
-                    
-                        <li data-id="duels">
-                            <a href="/" rel="nofollow">
-                                <span class="block-left"><i class="fa fa-server"></i></span>
-                                <span class="block-right">Дуэли</span>
-                            </a>
-                        </li>
-                    
-                    
-                        <li data-id="other">
-                            <a href="/" rel="nofollow">
-                                <span class="block-left"><i class="fa fa-server"></i></span>
-                                <span class="block-right">Прочее</span>
-                            </a>
-                        </li>
-                    
-                </ul>
-            </div>
-
-            <div class="block-right">
-                <button class="btn block copy-clipboard text-upper text-bold" data-clipboard-text="mc.griefcraft.net">
-                    mc.griefcraft.net
-                </button>
-            </div>
-        </div>
-
-        <div class="tab-list">
-            
-                <div class="tab-id active" data-id="survival">
-                    <div class="tabs">
-                        <ul class="tab-links">
-                            
-                                <li class="active" data-id="groups">
-                                    <a href="/" rel="nofollow">
-                                        <span class="block-left"><i class="fa fa-diamond"></i></span>
-                                        <span class="block-right">Привилегии</span>
-                                    </a>
-                                </li>
-                            
-                            
-                                <li data-id="cases">
-                                    <a href="/" rel="nofollow">
-                                        <span class="block-left"><i class="fa fa-diamond"></i></span>
-                                        <span class="block-right">Ключи</span>
-                                    </a>
-                                </li>
-                            
-                        </ul>
-
-                        <div class="tab-list">
-                            
-                                <div class="tab-id active" data-id="groups">
-                                    <div class="category-text pb-20">
-                                        <div class="panel">Донат выдаётся навсегда, на все серверы выживания и мини-игр.</div>
-                                    </div>
-
-                                    <div class="items">
-                                        
-                                            <div class="item-id" data-modal="paymodal">
-                                                <div class="image" style="background-image: url(https://i.imgur.com/kjLgmhD.png);"></div>
-                                                <div class="title">[Премиум]</div>
-                                                <div class="price">29 <i
-                                                        class="fa fa-ruble col-black"></i></div>
-                                                <div class="discount">-90%
-                                                </div>
-
-                                                
-                                                <input type="hidden" name="server" value="survival">
-                                                <input type="hidden" name="category" value="groups">
-                                                <input type="hidden" name="purchase" value="premium">
-
-                                                <input type="hidden" name="modalTemplate"
-                                                       value="Покупка привилегии [Премиум]">
-                                                
-                                            </div>
-                                        
-                                        
-                                            <div class="item-id" data-modal="paymodal">
-                                                <div class="image" style="background-image: url(https://i.imgur.com/WEQh2Es.png);"></div>
-                                                <div class="title">[Креатив]</div>
-                                                <div class="price">39 <i
-                                                        class="fa fa-ruble col-black"></i></div>
-                                                <div class="discount">-90%
-                                                </div>
-
-                                                
-                                                <input type="hidden" name="server" value="survival">
-                                                <input type="hidden" name="category" value="groups">
-                                                <input type="hidden" name="purchase" value="creative">
-
-                                                <input type="hidden" name="modalTemplate"
-                                                       value="Покупка привилегии [Креатив]">
-                                                
-                                            </div>
-                                        
-                                        
-                                            <div class="item-id" data-modal="paymodal">
-                                                <div class="image" style="background-image: url(https://i.imgur.com/N3WMJeX.png);"></div>
-                                                <div class="title">[Админ]</div>
-                                                <div class="price">59 <i
-                                                        class="fa fa-ruble col-black"></i></div>
-                                                <div class="discount">-90%
-                                                </div>
-
-                                                
-                                                <input type="hidden" name="server" value="survival">
-                                                <input type="hidden" name="category" value="groups">
-                                                <input type="hidden" name="purchase" value="admin">
-
-                                                <input type="hidden" name="modalTemplate"
-                                                       value="Покупка привилегии [Админ]">
-                                                
-                                            </div>
-                                        
-                                        
-                                            <div class="item-id" data-modal="paymodal">
-                                                <div class="image" style="background-image: url(https://i.imgur.com/lrYZzh9.png);"></div>
-                                                <div class="title">[Модератор]</div>
-                                                <div class="price">79 <i
-                                                        class="fa fa-ruble col-black"></i></div>
-                                                <div class="discount">-90%
-                                                </div>
-
-                                                
-                                                <input type="hidden" name="server" value="survival">
-                                                <input type="hidden" name="category" value="groups">
-                                                <input type="hidden" name="purchase" value="moder">
-
-                                                <input type="hidden" name="modalTemplate"
-                                                       value="Покупка привилегии [Модератор]">
-                                                
-                                            </div>
-                                        
-                                        
-                                            <div class="item-id" data-modal="paymodal">
-                                                <div class="image" style="background-image: url(https://i.imgur.com/xjkvJaO.png);"></div>
-                                                <div class="title">[Гл.Админ]</div>
-                                                <div class="price">119 <i
-                                                        class="fa fa-ruble col-black"></i></div>
-                                                <div class="discount">-90%
-                                                </div>
-
-                                                
-                                                <input type="hidden" name="server" value="survival">
-                                                <input type="hidden" name="category" value="groups">
-                                                <input type="hidden" name="purchase" value="gadmin">
-
-                                                <input type="hidden" name="modalTemplate"
-                                                       value="Покупка привилегии [Гл.Админ]">
-                                                
-                                            </div>
-                                        
-                                        
-                                            <div class="item-id" data-modal="paymodal">
-                                                <div class="image" style="background-image: url(https://i.imgur.com/aRJKkML.png);"></div>
-                                                <div class="title">[Создатель]</div>
-                                                <div class="price">179 <i
-                                                        class="fa fa-ruble col-black"></i></div>
-                                                <div class="discount">-90%
-                                                </div>
-
-                                                
-                                                <input type="hidden" name="server" value="survival">
-                                                <input type="hidden" name="category" value="groups">
-                                                <input type="hidden" name="purchase" value="sozk">
-
-                                                <input type="hidden" name="modalTemplate"
-                                                       value="Покупка привилегии [Создатель]">
-                                                
-                                            </div>
-                                        
-                                        
-                                            <div class="item-id" data-modal="paymodal">
-                                                <div class="image" style="background-image: url(https://i.imgur.com/EpaIPLt.png);"></div>
-                                                <div class="title">[Основатель]</div>
-                                                <div class="price">219 <i
-                                                        class="fa fa-ruble col-black"></i></div>
-                                                <div class="discount">-90%
-                                                </div>
-
-                                                
-                                                <input type="hidden" name="server" value="survival">
-                                                <input type="hidden" name="category" value="groups">
-                                                <input type="hidden" name="purchase" value="osn">
-
-                                                <input type="hidden" name="modalTemplate"
-                                                       value="Покупка привилегии [Основатель]">
-                                                
-                                            </div>
-                                        
-                                        
-                                            <div class="item-id" data-modal="paymodal">
-                                                <div class="image" style="background-image: url(https://i.imgur.com/OYmFMWn.png);"></div>
-                                                <div class="title">[Оператор]</div>
-                                                <div class="price">279 <i
-                                                        class="fa fa-ruble col-black"></i></div>
-                                                <div class="discount">-90%
-                                                </div>
-
-                                                
-                                                <input type="hidden" name="server" value="survival">
-                                                <input type="hidden" name="category" value="groups">
-                                                <input type="hidden" name="purchase" value="oper">
-
-                                                <input type="hidden" name="modalTemplate"
-                                                       value="Покупка привилегии [Оператор]">
-                                                
-                                            </div>
-                                        
-                                        
-                                            <div class="item-id" data-modal="paymodal">
-                                                <div class="image" style="background-image: url(https://i.imgur.com/PipvYel.png);"></div>
-                                                <div class="title">[Властелин]</div>
-                                                <div class="price">349 <i
-                                                        class="fa fa-ruble col-black"></i></div>
-                                                <div class="discount">-90%
-                                                </div>
-
-                                                
-                                                <input type="hidden" name="server" value="survival">
-                                                <input type="hidden" name="category" value="groups">
-                                                <input type="hidden" name="purchase" value="support">
-
-                                                <input type="hidden" name="modalTemplate"
-                                                       value="Покупка привилегии [Властелин]">
-                                                
-                                            </div>
-                                        
-                                        
-                                            <div class="item-id" data-modal="paymodal">
-                                                <div class="image" style="background-image: url(https://i.imgur.com/CFT57sq.png);"></div>
-                                                <div class="title">[Консоль]</div>
-                                                <div class="price">479 <i
-                                                        class="fa fa-ruble col-black"></i></div>
-                                                <div class="discount">-90%
-                                                </div>
-
-                                                
-                                                <input type="hidden" name="server" value="survival">
-                                                <input type="hidden" name="category" value="groups">
-                                                <input type="hidden" name="purchase" value="console">
-
-                                                <input type="hidden" name="modalTemplate"
-                                                       value="Покупка привилегии [Консоль]">
-                                                
-                                            </div>
-                                        
-                                        
-                                            <div class="item-id" data-modal="paymodal">
-                                                <div class="image" style="background-image: url(https://i.imgur.com/u2BklWX.png);"></div>
-                                                <div class="title">[Сервер]</div>
-                                                <div class="price">949 <i
-                                                        class="fa fa-ruble col-black"></i></div>
-                                                <div class="discount">-90%
-                                                </div>
-
-                                                
-                                                <input type="hidden" name="server" value="survival">
-                                                <input type="hidden" name="category" value="groups">
-                                                <input type="hidden" name="purchase" value="sponsor">
-
-                                                <input type="hidden" name="modalTemplate"
-                                                       value="Покупка привилегии [Сервер]">
-                                                
-                                            </div>
-                                        
-                                        
-                                            <div class="item-id" data-modal="paymodal">
-                                                <div class="image" style="background-image: url(https://i.imgur.com/T764Z65.png);"></div>
-                                                <div class="title">[ХЕЛПЕР]</div>
-                                                <div class="price">1979 <i
-                                                        class="fa fa-ruble col-black"></i></div>
-                                                <div class="discount">-90%
-                                                </div>
-
-                                                
-                                                <input type="hidden" name="server" value="survival">
-                                                <input type="hidden" name="category" value="groups">
-                                                <input type="hidden" name="purchase" value="helper">
-
-                                                <input type="hidden" name="modalTemplate"
-                                                       value="Покупка привилегии [ХЕЛПЕР]">
-                                                
-                                            </div>
-                                        
-                                        
-                                            <div class="item-id" data-modal="paymodal">
-                                                <div class="image" style="background-image: url(https://i.imgur.com/jTmM99Q.png);"></div>
-                                                <div class="title">[СПОНСОР]</div>
-                                                <div class="price">3479 <i
-                                                        class="fa fa-ruble col-black"></i></div>
-                                                <div class="discount">-90%
-                                                </div>
-
-                                                
-                                                <input type="hidden" name="server" value="survival">
-                                                <input type="hidden" name="category" value="groups">
-                                                <input type="hidden" name="purchase" value="fors">
-
-                                                <input type="hidden" name="modalTemplate"
-                                                       value="Покупка привилегии [СПОНСОР]">
-                                                
-                                            </div>
-                                        
-                                        
-                                            <div class="item-id" data-modal="paymodal">
-                                                <div class="image" style="background-image: url(https://i.imgur.com/u4JgQHI.png);"></div>
-                                                <div class="title">[КОМАНДА]</div>
-                                                <div class="price">5479 <i
-                                                        class="fa fa-ruble col-black"></i></div>
-                                                <div class="discount">-90%
-                                                </div>
-
-                                                
-                                                <input type="hidden" name="server" value="survival">
-                                                <input type="hidden" name="category" value="groups">
-                                                <input type="hidden" name="purchase" value="staff">
-
-                                                <input type="hidden" name="modalTemplate"
-                                                       value="Покупка привилегии [КОМАНДА]">
-                                                
-                                            </div>
-                                        
-                                        
-                                            <div class="item-id" data-modal="paymodal">
-                                                <div class="image" style="background-image: url(https://i.imgur.com/BkXGNfU.png);"></div>
-                                                <div class="title">[МЕНЕДЖЕР]</div>
-                                                <div class="price">8149 <i
-                                                        class="fa fa-ruble col-black"></i></div>
-                                                <div class="discount">-90%
-                                                </div>
-
-                                                
-                                                <input type="hidden" name="server" value="survival">
-                                                <input type="hidden" name="category" value="groups">
-                                                <input type="hidden" name="purchase" value="manager">
-
-                                                <input type="hidden" name="modalTemplate"
-                                                       value="Покупка привилегии [МЕНЕДЖЕР]">
-                                                
-                                            </div>
-                                        
-                                        
-                                            <div class="item-id" data-modal="paymodal">
-                                                <div class="image" style="background-image: url(https://i.imgur.com/LPaIE0W.png);"></div>
-                                                <div class="title">[МЕЦЕНАТ]</div>
-                                                <div class="price">14749 <i
-                                                        class="fa fa-ruble col-black"></i></div>
-                                                <div class="discount">-90%
-                                                </div>
-
-                                                
-                                                <input type="hidden" name="server" value="survival">
-                                                <input type="hidden" name="category" value="groups">
-                                                <input type="hidden" name="purchase" value="mecenat">
-
-                                                <input type="hidden" name="modalTemplate"
-                                                       value="Покупка привилегии [МЕЦЕНАТ]">
-                                                
-                                            </div>
-                                        
-                                    </div>
-                                </div>
-                            
-                            
-                                <div class="tab-id" data-id="cases">
-                                    <div class="category-text pb-20">
-                                        <div class="panel">Чем больше ключей вы покупаете, тем выше скидка.</div>
-                                    </div>
-
-                                    <div class="items">
-                                        
-                                            <div class="item-id" data-modal="paymodal">
-                                                <div class="image" style="background-image: url(https://i.imgur.com/ABZ845H.png);"></div>
-                                                <div class="title">5 ключей</div>
-                                                <div class="price">49 <i
-                                                        class="fa fa-ruble col-black"></i></div>
-                                                <div class="discount">-90%
-                                                </div>
-
-                                                
-                                                <input type="hidden" name="server" value="survival">
-                                                <input type="hidden" name="category" value="cases">
-                                                <input type="hidden" name="purchase" value="case_don_5">
-
-                                                <input type="hidden" name="modalTemplate"
-                                                       value="Покупка 5 ключей">
-                                                
-                                            </div>
-                                        
-                                        
-                                            <div class="item-id" data-modal="paymodal">
-                                                <div class="image" style="background-image: url(https://i.imgur.com/V9ob4pm.png);"></div>
-                                                <div class="title">10 ключей</div>
-                                                <div class="price">89 <i
-                                                        class="fa fa-ruble col-black"></i></div>
-                                                <div class="discount">-90%
-                                                </div>
-
-                                                
-                                                <input type="hidden" name="server" value="survival">
-                                                <input type="hidden" name="category" value="cases">
-                                                <input type="hidden" name="purchase" value="case_don_10">
-
-                                                <input type="hidden" name="modalTemplate"
-                                                       value="Покупка 10 ключей">
-                                                
-                                            </div>
-                                        
-                                        
-                                            <div class="item-id" data-modal="paymodal">
-                                                <div class="image" style="background-image: url(https://i.imgur.com/nMj6c10.png);"></div>
-                                                <div class="title">20 ключей</div>
-                                                <div class="price">169 <i
-                                                        class="fa fa-ruble col-black"></i></div>
-                                                <div class="discount">-90%
-                                                </div>
-
-                                                
-                                                <input type="hidden" name="server" value="survival">
-                                                <input type="hidden" name="category" value="cases">
-                                                <input type="hidden" name="purchase" value="case_don_20">
-
-                                                <input type="hidden" name="modalTemplate"
-                                                       value="Покупка 20 ключей">
-                                                
-                                            </div>
-                                        
-                                    </div>
-                                </div>
-                            
-                        </div>
-                    </div>
-                </div>
-            
-            
-                <div class="tab-id" data-id="anarchy">
-                    <div class="tabs">
-                        <ul class="tab-links">
-                            
-                                <li class="active" data-id="groups">
-                                    <a href="/" rel="nofollow">
-                                        <span class="block-left"><i class="fa fa-diamond"></i></span>
-                                        <span class="block-right">Привилегии</span>
-                                    </a>
-                                </li>
-                            
-                            
-                                <li data-id="cases">
-                                    <a href="/" rel="nofollow">
-                                        <span class="block-left"><i class="fa fa-diamond"></i></span>
-                                        <span class="block-right">Ключи</span>
-                                    </a>
-                                </li>
-                            
-                            
-                                <li data-id="economy">
-                                    <a href="/" rel="nofollow">
-                                        <span class="block-left"><i class="fa fa-diamond"></i></span>
-                                        <span class="block-right">Валюта</span>
-                                    </a>
-                                </li>
-                            
-                        </ul>
-
-                        <div class="tab-list">
-                            
-                                <div class="tab-id active" data-id="groups">
-                                    <div class="category-text pb-20">
-                                        <div class="panel">Услуги выдаются навсегда.</div>
-                                    </div>
-
-                                    <div class="items">
-                                        
-                                            <div class="item-id" data-modal="paymodal">
-                                                <div class="image" style="background-image: url(https://i.imgur.com/kjLgmhD.png);"></div>
-                                                <div class="title">[Барон]</div>
-                                                <div class="price">15 <i
-                                                        class="fa fa-ruble col-black"></i></div>
-                                                <div class="discount">-90%
-                                                </div>
-
-                                                
-                                                <input type="hidden" name="server" value="anarchy">
-                                                <input type="hidden" name="category" value="groups">
-                                                <input type="hidden" name="purchase" value="baron">
-
-                                                <input type="hidden" name="modalTemplate"
-                                                       value="Покупка привилегии [Барон]">
-                                                
-                                            </div>
-                                        
-                                        
-                                            <div class="item-id" data-modal="paymodal">
-                                                <div class="image" style="background-image: url(https://i.imgur.com/WEQh2Es.png);"></div>
-                                                <div class="title">[Страж]</div>
-                                                <div class="price">27 <i
-                                                        class="fa fa-ruble col-black"></i></div>
-                                                <div class="discount">-90%
-                                                </div>
-
-                                                
-                                                <input type="hidden" name="server" value="anarchy">
-                                                <input type="hidden" name="category" value="groups">
-                                                <input type="hidden" name="purchase" value="strazh">
-
-                                                <input type="hidden" name="modalTemplate"
-                                                       value="Покупка привилегии [Страж]">
-                                                
-                                            </div>
-                                        
-                                        
-                                            <div class="item-id" data-modal="paymodal">
-                                                <div class="image" style="background-image: url(https://i.imgur.com/N3WMJeX.png);"></div>
-                                                <div class="title">[Герой]</div>
-                                                <div class="price">39 <i
-                                                        class="fa fa-ruble col-black"></i></div>
-                                                <div class="discount">-90%
-                                                </div>
-
-                                                
-                                                <input type="hidden" name="server" value="anarchy">
-                                                <input type="hidden" name="category" value="groups">
-                                                <input type="hidden" name="purchase" value="hero">
-
-                                                <input type="hidden" name="modalTemplate"
-                                                       value="Покупка привилегии [Герой]">
-                                                
-                                            </div>
-                                        
-                                        
-                                            <div class="item-id" data-modal="paymodal">
-                                                <div class="image" style="background-image: url(https://i.imgur.com/lrYZzh9.png);"></div>
-                                                <div class="title">[Аспид]</div>
-                                                <div class="price">79 <i
-                                                        class="fa fa-ruble col-black"></i></div>
-                                                <div class="discount">-90%
-                                                </div>
-
-                                                
-                                                <input type="hidden" name="server" value="anarchy">
-                                                <input type="hidden" name="category" value="groups">
-                                                <input type="hidden" name="purchase" value="aspid">
-
-                                                <input type="hidden" name="modalTemplate"
-                                                       value="Покупка привилегии [Аспид]">
-                                                
-                                            </div>
-                                        
-                                        
-                                            <div class="item-id" data-modal="paymodal">
-                                                <div class="image" style="background-image: url(https://i.imgur.com/xjkvJaO.png);"></div>
-                                                <div class="title">[Сквид]</div>
-                                                <div class="price">129 <i
-                                                        class="fa fa-ruble col-black"></i></div>
-                                                <div class="discount">-90%
-                                                </div>
-
-                                                
-                                                <input type="hidden" name="server" value="anarchy">
-                                                <input type="hidden" name="category" value="groups">
-                                                <input type="hidden" name="purchase" value="squid">
-
-                                                <input type="hidden" name="modalTemplate"
-                                                       value="Покупка привилегии [Сквид]">
-                                                
-                                            </div>
-                                        
-                                        
-                                            <div class="item-id" data-modal="paymodal">
-                                                <div class="image" style="background-image: url(https://i.imgur.com/aRJKkML.png);"></div>
-                                                <div class="title">[Глава]</div>
-                                                <div class="price">249 <i
-                                                        class="fa fa-ruble col-black"></i></div>
-                                                <div class="discount">-90%
-                                                </div>
-
-                                                
-                                                <input type="hidden" name="server" value="anarchy">
-                                                <input type="hidden" name="category" value="groups">
-                                                <input type="hidden" name="purchase" value="glava">
-
-                                                <input type="hidden" name="modalTemplate"
-                                                       value="Покупка привилегии [Глава]">
-                                                
-                                            </div>
-                                        
-                                        
-                                            <div class="item-id" data-modal="paymodal">
-                                                <div class="image" style="background-image: url(https://i.imgur.com/EpaIPLt.png);"></div>
-                                                <div class="title">[Элита]</div>
-                                                <div class="price">349 <i
-                                                        class="fa fa-ruble col-black"></i></div>
-                                                <div class="discount">-90%
-                                                </div>
-
-                                                
-                                                <input type="hidden" name="server" value="anarchy">
-                                                <input type="hidden" name="category" value="groups">
-                                                <input type="hidden" name="purchase" value="elite">
-
-                                                <input type="hidden" name="modalTemplate"
-                                                       value="Покупка привилегии [Элита]">
-                                                
-                                            </div>
-                                        
-                                        
-                                            <div class="item-id" data-modal="paymodal">
-                                                <div class="image" style="background-image: url(https://i.imgur.com/OYmFMWn.png);"></div>
-                                                <div class="title">[Титан]</div>
-                                                <div class="price">549 <i
-                                                        class="fa fa-ruble col-black"></i></div>
-                                                <div class="discount">-90%
-                                                </div>
-
-                                                
-                                                <input type="hidden" name="server" value="anarchy">
-                                                <input type="hidden" name="category" value="groups">
-                                                <input type="hidden" name="purchase" value="titan">
-
-                                                <input type="hidden" name="modalTemplate"
-                                                       value="Покупка привилегии [Титан]">
-                                                
-                                            </div>
-                                        
-                                        
-                                            <div class="item-id" data-modal="paymodal">
-                                                <div class="image" style="background-image: url(https://i.imgur.com/PipvYel.png);"></div>
-                                                <div class="title">[Принц]</div>
-                                                <div class="price">879 <i
-                                                        class="fa fa-ruble col-black"></i></div>
-                                                <div class="discount">-90%
-                                                </div>
-
-                                                
-                                                <input type="hidden" name="server" value="anarchy">
-                                                <input type="hidden" name="category" value="groups">
-                                                <input type="hidden" name="purchase" value="princ">
-
-                                                <input type="hidden" name="modalTemplate"
-                                                       value="Покупка привилегии [Принц]">
-                                                
-                                            </div>
-                                        
-                                        
-                                            <div class="item-id" data-modal="paymodal">
-                                                <div class="image" style="background-image: url(https://i.imgur.com/CFT57sq.png);"></div>
-                                                <div class="title">[Князь]</div>
-                                                <div class="price">1299 <i
-                                                        class="fa fa-ruble col-black"></i></div>
-                                                <div class="discount">-90%
-                                                </div>
-
-                                                
-                                                <input type="hidden" name="server" value="anarchy">
-                                                <input type="hidden" name="category" value="groups">
-                                                <input type="hidden" name="purchase" value="knyaz">
-
-                                                <input type="hidden" name="modalTemplate"
-                                                       value="Покупка привилегии [Князь]">
-                                                
-                                            </div>
-                                        
-                                        
-                                            <div class="item-id" data-modal="paymodal">
-                                                <div class="image" style="background-image: url(https://i.imgur.com/u2BklWX.png);"></div>
-                                                <div class="title">[Герцог]</div>
-                                                <div class="price">2379 <i
-                                                        class="fa fa-ruble col-black"></i></div>
-                                                <div class="discount">-90%
-                                                </div>
-
-                                                
-                                                <input type="hidden" name="server" value="anarchy">
-                                                <input type="hidden" name="category" value="groups">
-                                                <input type="hidden" name="purchase" value="gercog">
-
-                                                <input type="hidden" name="modalTemplate"
-                                                       value="Покупка привилегии [Герцог]">
-                                                
-                                            </div>
-                                        
-                                    </div>
-                                </div>
-                            
-                            
-                                <div class="tab-id" data-id="cases">
-                                    <div class="category-text pb-20">
-                                        <div class="panel">Чем больше ключей вы покупаете, тем выше скидка.</div>
-                                    </div>
-
-                                    <div class="items">
-                                        
-                                            <div class="item-id" data-modal="paymodal">
-                                                <div class="image" style="background-image: url(https://i.imgur.com/aWKOzSB.png);"></div>
-                                                <div class="title">Токен ключи</div>
-                                                <div class="price">14 <i
-                                                        class="fa fa-ruble col-black"></i></div>
-                                                <div class="discount">-90%
-                                                </div>
-
-                                                <input type="hidden" name="amounted"
-                                                       value="1">
-                                                <input type="hidden" name="server" value="anarchy">
-                                                <input type="hidden" name="category" value="cases">
-                                                <input type="hidden" name="purchase" value="tokenscase">
-
-                                                <input type="hidden" name="modalTemplate"
-                                                       value="Покупка Токен ключи">
-                                                
-                                            </div>
-                                        
-                                        
-                                            <div class="item-id" data-modal="paymodal">
-                                                <div class="image" style="background-image: url(https://i.imgur.com/QWELePQ.png);"></div>
-                                                <div class="title">Монетные ключи</div>
-                                                <div class="price">7 <i
-                                                        class="fa fa-ruble col-black"></i></div>
-                                                <div class="discount">-90%
-                                                </div>
-
-                                                <input type="hidden" name="amounted"
-                                                       value="1">
-                                                <input type="hidden" name="server" value="anarchy">
-                                                <input type="hidden" name="category" value="cases">
-                                                <input type="hidden" name="purchase" value="moneycase">
-
-                                                <input type="hidden" name="modalTemplate"
-                                                       value="Покупка Монетные ключи">
-                                                
-                                            </div>
-                                        
-                                        
-                                            <div class="item-id" data-modal="paymodal">
-                                                <div class="image" style="background-image: url(https://i.imgur.com/IeZMD3i.png);"></div>
-                                                <div class="title">Донат ключи</div>
-                                                <div class="price">70 <i
-                                                        class="fa fa-ruble col-black"></i></div>
-                                                <div class="discount">-90%
-                                                </div>
-
-                                                <input type="hidden" name="amounted"
-                                                       value="1">
-                                                <input type="hidden" name="server" value="anarchy">
-                                                <input type="hidden" name="category" value="cases">
-                                                <input type="hidden" name="purchase" value="donatecase">
-
-                                                <input type="hidden" name="modalTemplate"
-                                                       value="Покупка Донат ключи">
-                                                
-                                            </div>
-                                        
-                                        
-                                            <div class="item-id" data-modal="paymodal">
-                                                <div class="image" style="background-image: url(https://i.imgur.com/ZNdcuv9.png);"></div>
-                                                <div class="title">Броневые ключи</div>
-                                                <div class="price">14 <i
-                                                        class="fa fa-ruble col-black"></i></div>
-                                                <div class="discount">-90%
-                                                </div>
-
-                                                <input type="hidden" name="amounted"
-                                                       value="1">
-                                                <input type="hidden" name="server" value="anarchy">
-                                                <input type="hidden" name="category" value="cases">
-                                                <input type="hidden" name="purchase" value="bronyacase">
-
-                                                <input type="hidden" name="modalTemplate"
-                                                       value="Покупка Броневые ключи">
-                                                
-                                            </div>
-                                        
-                                        
-                                            <div class="item-id" data-modal="paymodal">
-                                                <div class="image" style="background-image: url(https://i.imgur.com/ladrfnn.png);"></div>
-                                                <div class="title">Оружейные ключи</div>
-                                                <div class="price">14 <i
-                                                        class="fa fa-ruble col-black"></i></div>
-                                                <div class="discount">-90%
-                                                </div>
-
-                                                <input type="hidden" name="amounted"
-                                                       value="1">
-                                                <input type="hidden" name="server" value="anarchy">
-                                                <input type="hidden" name="category" value="cases">
-                                                <input type="hidden" name="purchase" value="gunscase">
-
-                                                <input type="hidden" name="modalTemplate"
-                                                       value="Покупка Оружейные ключи">
-                                                
-                                            </div>
-                                        
-                                        
-                                            <div class="item-id" data-modal="paymodal">
-                                                <div class="image" style="background-image: url(https://i.imgur.com/0mFrc7A.png);"></div>
-                                                <div class="title">Инструментальные ключи</div>
-                                                <div class="price">14 <i
-                                                        class="fa fa-ruble col-black"></i></div>
-                                                <div class="discount">-90%
-                                                </div>
-
-                                                <input type="hidden" name="amounted"
-                                                       value="1">
-                                                <input type="hidden" name="server" value="anarchy">
-                                                <input type="hidden" name="category" value="cases">
-                                                <input type="hidden" name="purchase" value="instcase">
-
-                                                <input type="hidden" name="modalTemplate"
-                                                       value="Покупка Инструментальные ключи">
-                                                
-                                            </div>
-                                        
-                                    </div>
-                                </div>
-                            
-                            
-                                <div class="tab-id" data-id="economy">
-                                    <div class="category-text pb-20">
-                                        <div class="panel">Чем больше токенов вы покупаете, тем выше скидка.</div>
-                                    </div>
-
-                                    <div class="items">
-                                        
-                                            <div class="item-id" data-modal="paymodal">
-                                                <div class="image" style="background-image: url(https://i.imgur.com/nTm5TSf.png);"></div>
-                                                <div class="title">5000 токенов</div>
-                                                <div class="price">50 <i
-                                                        class="fa fa-ruble col-black"></i></div>
-                                                <div class="discount">-90%
-                                                </div>
-
-                                                
-                                                <input type="hidden" name="server" value="anarchy">
-                                                <input type="hidden" name="category" value="economy">
-                                                <input type="hidden" name="purchase" value="token">
-
-                                                <input type="hidden" name="modalTemplate"
-                                                       value="Покупка 5000 токенов">
-                                                
-                                            </div>
-                                        
-                                    </div>
-                                </div>
-                            
-                        </div>
-                    </div>
-                </div>
-            
-            
-                <div class="tab-id" data-id="skyblock">
-                    <div class="tabs">
-                        <ul class="tab-links">
-                            
-                                <li class="active" data-id="groups">
-                                    <a href="/" rel="nofollow">
-                                        <span class="block-left"><i class="fa fa-diamond"></i></span>
-                                        <span class="block-right">Привилегии</span>
-                                    </a>
-                                </li>
-                            
-                            
-                                <li data-id="cases">
-                                    <a href="/" rel="nofollow">
-                                        <span class="block-left"><i class="fa fa-diamond"></i></span>
-                                        <span class="block-right">Ключи</span>
-                                    </a>
-                                </li>
-                            
-                            
-                                <li data-id="economy">
-                                    <a href="/" rel="nofollow">
-                                        <span class="block-left"><i class="fa fa-diamond"></i></span>
-                                        <span class="block-right">Валюта</span>
-                                    </a>
-                                </li>
-                            
-                            
-                                <li data-id="battlepass">
-                                    <a href="/" rel="nofollow">
-                                        <span class="block-left"><i class="fa fa-diamond"></i></span>
-                                        <span class="block-right">Боевой пропуск</span>
-                                    </a>
-                                </li>
-                            
-                        </ul>
-
-                        <div class="tab-list">
-                            
-                                <div class="tab-id active" data-id="groups">
-                                    <div class="category-text pb-20">
-                                        <div class="panel">Услуги выдаются навсегда, на все серверы SkyBlock.</div>
-                                    </div>
-
-                                    <div class="items">
-                                        
-                                            <div class="item-id" data-modal="paymodal">
-                                                <div class="image" style="background-image: url(https://i.imgur.com/e5FdQEs.png);"></div>
-                                                <div class="title">[PLUTO]</div>
-                                                <div class="price">99 <i
-                                                        class="fa fa-ruble col-black"></i></div>
-                                                <div class="discount">-90%
-                                                </div>
-
-                                                
-                                                <input type="hidden" name="server" value="skyblock">
-                                                <input type="hidden" name="category" value="groups">
-                                                <input type="hidden" name="purchase" value="pluto">
-
-                                                <input type="hidden" name="modalTemplate"
-                                                       value="Покупка привилегии [PLUTO]">
-                                                
-                                            </div>
-                                        
-                                        
-                                            <div class="item-id" data-modal="paymodal">
-                                                <div class="image" style="background-image: url(https://i.imgur.com/Rmisg0E.png);"></div>
-                                                <div class="title">[BRILLIUM]</div>
-                                                <div class="price">179 <i
-                                                        class="fa fa-ruble col-black"></i></div>
-                                                <div class="discount">-90%
-                                                </div>
-
-                                                
-                                                <input type="hidden" name="server" value="skyblock">
-                                                <input type="hidden" name="category" value="groups">
-                                                <input type="hidden" name="purchase" value="brillium">
-
-                                                <input type="hidden" name="modalTemplate"
-                                                       value="Покупка привилегии [BRILLIUM]">
-                                                
-                                            </div>
-                                        
-                                        
-                                            <div class="item-id" data-modal="paymodal">
-                                                <div class="image" style="background-image: url(https://i.imgur.com/Z2p6QU2.png);"></div>
-                                                <div class="title">[VANDERI]</div>
-                                                <div class="price">389 <i
-                                                        class="fa fa-ruble col-black"></i></div>
-                                                <div class="discount">-90%
-                                                </div>
-
-                                                
-                                                <input type="hidden" name="server" value="skyblock">
-                                                <input type="hidden" name="category" value="groups">
-                                                <input type="hidden" name="purchase" value="vanderi">
-
-                                                <input type="hidden" name="modalTemplate"
-                                                       value="Покупка привилегии [VANDERI]">
-                                                
-                                            </div>
-                                        
-                                        
-                                            <div class="item-id" data-modal="paymodal">
-                                                <div class="image" style="background-image: url(https://i.imgur.com/60Adbjm.png);"></div>
-                                                <div class="title">[FINICIUS]</div>
-                                                <div class="price">849 <i
-                                                        class="fa fa-ruble col-black"></i></div>
-                                                <div class="discount">-90%
-                                                </div>
-
-                                                
-                                                <input type="hidden" name="server" value="skyblock">
-                                                <input type="hidden" name="category" value="groups">
-                                                <input type="hidden" name="purchase" value="finicius">
-
-                                                <input type="hidden" name="modalTemplate"
-                                                       value="Покупка привилегии [FINICIUS]">
-                                                
-                                            </div>
-                                        
-                                        
-                                            <div class="item-id" data-modal="paymodal">
-                                                <div class="image" style="background-image: url(https://i.imgur.com/9spoMcg.png);"></div>
-                                                <div class="title">[JARSTONE]</div>
-                                                <div class="price">999 <i
-                                                        class="fa fa-ruble col-black"></i></div>
-                                                <div class="discount">-90%
-                                                </div>
-
-                                                
-                                                <input type="hidden" name="server" value="skyblock">
-                                                <input type="hidden" name="category" value="groups">
-                                                <input type="hidden" name="purchase" value="jarstone">
-
-                                                <input type="hidden" name="modalTemplate"
-                                                       value="Покупка привилегии [JARSTONE]">
-                                                
-                                            </div>
-                                        
-                                        
-                                            <div class="item-id" data-modal="paymodal">
-                                                <div class="image" style="background-image: url(https://i.imgur.com/ccgmIrS.png);"></div>
-                                                <div class="title">[SPONSOR]</div>
-                                                <div class="price">2000 <i
-                                                        class="fa fa-ruble col-black"></i></div>
-                                                <div class="discount">-90%
-                                                </div>
-
-                                                
-                                                <input type="hidden" name="server" value="skyblock">
-                                                <input type="hidden" name="category" value="groups">
-                                                <input type="hidden" name="purchase" value="sponsor">
-
-                                                <input type="hidden" name="modalTemplate"
-                                                       value="Покупка привилегии [SPONSOR]">
-                                                
-                                            </div>
-                                        
-                                    </div>
-                                </div>
-                            
-                            
-                                <div class="tab-id" data-id="cases">
-                                    <div class="category-text pb-20">
-                                        <div class="panel">Чем больше ключей вы покупаете, тем выше скидка.</div>
-                                    </div>
-
-                                    <div class="items">
-                                        
-                                            <div class="item-id" data-modal="paymodal">
-                                                <div class="image" style="background-image: url(https://i.imgur.com/aWKOzSB.png);"></div>
-                                                <div class="title">Ключи с рубинами</div>
-                                                <div class="price">79 <i
-                                                        class="fa fa-ruble col-black"></i></div>
-                                                <div class="discount">-90%
-                                                </div>
-
-                                                <input type="hidden" name="amounted"
-                                                       value="1">
-                                                <input type="hidden" name="server" value="skyblock">
-                                                <input type="hidden" name="category" value="cases">
-                                                <input type="hidden" name="purchase" value="coinscase">
-
-                                                <input type="hidden" name="modalTemplate"
-                                                       value="Покупка Ключи с рубинами">
-                                                
-                                            </div>
-                                        
-                                        
-                                            <div class="item-id" data-modal="paymodal">
-                                                <div class="image" style="background-image: url(https://i.imgur.com/QWELePQ.png);"></div>
-                                                <div class="title">Ключи с монетками</div>
-                                                <div class="price">39 <i
-                                                        class="fa fa-ruble col-black"></i></div>
-                                                <div class="discount">-90%
-                                                </div>
-
-                                                <input type="hidden" name="amounted"
-                                                       value="1">
-                                                <input type="hidden" name="server" value="skyblock">
-                                                <input type="hidden" name="category" value="cases">
-                                                <input type="hidden" name="purchase" value="moneycase">
-
-                                                <input type="hidden" name="modalTemplate"
-                                                       value="Покупка Ключи с монетками">
-                                                
-                                            </div>
-                                        
-                                        
-                                            <div class="item-id" data-modal="paymodal">
-                                                <div class="image" style="background-image: url(https://i.imgur.com/IeZMD3i.png);"></div>
-                                                <div class="title">Ключи с привилегиями</div>
-                                                <div class="price">99 <i
-                                                        class="fa fa-ruble col-black"></i></div>
-                                                <div class="discount">-90%
-                                                </div>
-
-                                                <input type="hidden" name="amounted"
-                                                       value="1">
-                                                <input type="hidden" name="server" value="skyblock">
-                                                <input type="hidden" name="category" value="cases">
-                                                <input type="hidden" name="purchase" value="donatecase">
-
-                                                <input type="hidden" name="modalTemplate"
-                                                       value="Покупка Ключи с привилегиями">
-                                                
-                                            </div>
-                                        
-                                    </div>
-                                </div>
-                            
-                            
-                                <div class="tab-id" data-id="economy">
-                                    <div class="category-text pb-20">
-                                        <div class="panel">Чем больше рубинов вы покупаете, тем выше скидка.</div>
-                                    </div>
-
-                                    <div class="items">
-                                        
-                                            <div class="item-id" data-modal="paymodal">
-                                                <div class="image" style="background-image: url(https://i.imgur.com/nTm5TSf.png);"></div>
-                                                <div class="title">Рубины</div>
-                                                <div class="price">1 <i
-                                                        class="fa fa-ruble col-black"></i></div>
-                                                <div class="discount">-90%
-                                                </div>
-
-                                                <input type="hidden" name="amounted"
-                                                       value="1">
-                                                <input type="hidden" name="server" value="skyblock">
-                                                <input type="hidden" name="category" value="economy">
-                                                <input type="hidden" name="purchase" value="ruby">
-
-                                                <input type="hidden" name="modalTemplate"
-                                                       value="Покупка Рубины">
-                                                
-                                            </div>
-                                        
-                                    </div>
-                                </div>
-                            
-                            
-                                <div class="tab-id" data-id="battlepass">
-                                    <div class="category-text pb-20">
-                                        <div class="panel">Услуги выдаются навсегда, на все серверы SkyBlock.</div>
-                                    </div>
-
-                                    <div class="items">
-                                        
-                                            <div class="item-id" data-modal="paymodal">
-                                                <div class="image" style="background-image: url(https://i.imgur.com/ALdFYbE.png);"></div>
-                                                <div class="title">Боевой пропуск [Премиум]</div>
-                                                <div class="price">199 <i
-                                                        class="fa fa-ruble col-black"></i></div>
-                                                <div class="discount">-90%
-                                                </div>
-
-                                                
-                                                <input type="hidden" name="server" value="skyblock">
-                                                <input type="hidden" name="category" value="battlepass">
-                                                <input type="hidden" name="purchase" value="battlepass">
-
-                                                <input type="hidden" name="modalTemplate"
-                                                       value="Покупка привилегии Боевой пропуск [Премиум]">
-                                                
-                                            </div>
-                                        
-                                    </div>
-                                </div>
-                            
-                        </div>
-                    </div>
-                </div>
-            
-            
-                <div class="tab-id" data-id="duels">
-                    <div class="tabs">
-                        <ul class="tab-links">
-                            
-                                <li class="active" data-id="groups">
-                                    <a href="/" rel="nofollow">
-                                        <span class="block-left"><i class="fa fa-diamond"></i></span>
-                                        <span class="block-right">Привилегии</span>
-                                    </a>
-                                </li>
-                            
-                            
-                                <li data-id="cases">
-                                    <a href="/" rel="nofollow">
-                                        <span class="block-left"><i class="fa fa-diamond"></i></span>
-                                        <span class="block-right">Ключи</span>
-                                    </a>
-                                </li>
-                            
-                        </ul>
-
-                        <div class="tab-list">
-                            
-                                <div class="tab-id active" data-id="groups">
-                                    <div class="category-text pb-20">
-                                        <div class="panel">Донат выдаётся навсегда, на все серверы выживания и мини-игры.</div>
-                                    </div>
-
-                                    <div class="items">
-                                        
-                                            <div class="item-id" data-modal="paymodal">
-                                                <div class="image" style="background-image: url(https://i.imgur.com/X3vxtim.png);"></div>
-                                                <div class="title">[Ghost]</div>
-                                                <div class="price">49 <i
-                                                        class="fa fa-ruble col-black"></i></div>
-                                                <div class="discount">-90%
-                                                </div>
-
-                                                
-                                                <input type="hidden" name="server" value="duels">
-                                                <input type="hidden" name="category" value="groups">
-                                                <input type="hidden" name="purchase" value="ghost">
-
-                                                <input type="hidden" name="modalTemplate"
-                                                       value="Покупка привилегии [Ghost]">
-                                                
-                                            </div>
-                                        
-                                        
-                                            <div class="item-id" data-modal="paymodal">
-                                                <div class="image" style="background-image: url(https://i.imgur.com/oWHjfWB.png);"></div>
-                                                <div class="title">[Spartan]</div>
-                                                <div class="price">119 <i
-                                                        class="fa fa-ruble col-black"></i></div>
-                                                <div class="discount">-90%
-                                                </div>
-
-                                                
-                                                <input type="hidden" name="server" value="duels">
-                                                <input type="hidden" name="category" value="groups">
-                                                <input type="hidden" name="purchase" value="spartan">
-
-                                                <input type="hidden" name="modalTemplate"
-                                                       value="Покупка привилегии [Spartan]">
-                                                
-                                            </div>
-                                        
-                                        
-                                            <div class="item-id" data-modal="paymodal">
-                                                <div class="image" style="background-image: url(https://i.imgur.com/OkrVEEp.png);"></div>
-                                                <div class="title">[Mage]</div>
-                                                <div class="price">249 <i
-                                                        class="fa fa-ruble col-black"></i></div>
-                                                <div class="discount">-90%
-                                                </div>
-
-                                                
-                                                <input type="hidden" name="server" value="duels">
-                                                <input type="hidden" name="category" value="groups">
-                                                <input type="hidden" name="purchase" value="mage">
-
-                                                <input type="hidden" name="modalTemplate"
-                                                       value="Покупка привилегии [Mage]">
-                                                
-                                            </div>
-                                        
-                                        
-                                            <div class="item-id" data-modal="paymodal">
-                                                <div class="image" style="background-image: url(https://i.imgur.com/aXBBKWb.png);"></div>
-                                                <div class="title">[Immortal]</div>
-                                                <div class="price">659 <i
-                                                        class="fa fa-ruble col-black"></i></div>
-                                                <div class="discount">-90%
-                                                </div>
-
-                                                
-                                                <input type="hidden" name="server" value="duels">
-                                                <input type="hidden" name="category" value="groups">
-                                                <input type="hidden" name="purchase" value="immortal">
-
-                                                <input type="hidden" name="modalTemplate"
-                                                       value="Покупка привилегии [Immortal]">
-                                                
-                                            </div>
-                                        
-                                    </div>
-                                </div>
-                            
-                            
-                                <div class="tab-id" data-id="cases">
-                                    <div class="category-text pb-20">
-                                        <div class="panel">Теперь можно выбрать количество ключей, которое вы хотите.</div>
-                                    </div>
-
-                                    <div class="items">
-                                        
-                                            <div class="item-id" data-modal="paymodal">
-                                                <div class="image" style="background-image: url(https://i.imgur.com/0JhasPR.png);"></div>
-                                                <div class="title">Ключи</div>
-                                                <div class="price">10 <i
-                                                        class="fa fa-ruble col-black"></i></div>
-                                                <div class="discount">-90%
-                                                </div>
-
-                                                <input type="hidden" name="amounted"
-                                                       value="1">
-                                                <input type="hidden" name="server" value="duels">
-                                                <input type="hidden" name="category" value="cases">
-                                                <input type="hidden" name="purchase" value="case_premium">
-
-                                                <input type="hidden" name="modalTemplate"
-                                                       value="Покупка Ключи">
-                                                
-                                            </div>
-                                        
-                                    </div>
-                                </div>
-                            
-                        </div>
-                    </div>
-                </div>
-            
-            
-                <div class="tab-id" data-id="other">
-                    <div class="tabs">
-                        <ul class="tab-links">
-                            
-                                <li class="active" data-id="account">
-                                    <a href="/" rel="nofollow">
-                                        <span class="block-left"><i class="fa fa-diamond"></i></span>
-                                        <span class="block-right">Аккаунт</span>
-                                    </a>
-                                </li>
-                            
-                            
-                                <li data-id="punishments">
-                                    <a href="/" rel="nofollow">
-                                        <span class="block-left"><i class="fa fa-diamond"></i></span>
-                                        <span class="block-right">Наказания</span>
-                                    </a>
-                                </li>
-                            
-                        </ul>
-
-                        <div class="tab-list">
-                            
-                                <div class="tab-id active" data-id="account">
-                                    <div class="category-text pb-20">
-                                        <div class="panel">Перед покупкой этих услуг свяжитесь с поддержкой в нашей группе ВКонтакте. Покупайте их только после получения инструкции от администрации.</div>
-                                    </div>
-
-                                    <div class="items">
-                                        
-                                            <div class="item-id" data-modal="paymodal">
-                                                <div class="image" style="background-image: url(https://i.imgur.com/k0xAExG.png);"></div>
-                                                <div class="title">Перенос привилегии</div>
-                                                <div class="price">149 <i
-                                                        class="fa fa-ruble col-black"></i></div>
-                                                <div class="discount">-90%
-                                                </div>
-
-                                                
-                                                <input type="hidden" name="server" value="other">
-                                                <input type="hidden" name="category" value="account">
-                                                <input type="hidden" name="purchase" value="donate_transfer">
-
-                                                <input type="hidden" name="modalTemplate"
-                                                       value="Покупка услуги «Перенос привилегии»">
-                                                
-                                            </div>
-                                        
-                                        
-                                            <div class="item-id" data-modal="paymodal">
-                                                <div class="image" style="background-image: url(https://i.imgur.com/rAecPzL.png);"></div>
-                                                <div class="title">Восстановление аккаунта</div>
-                                                <div class="price">119 <i
-                                                        class="fa fa-ruble col-black"></i></div>
-                                                <div class="discount">-90%
-                                                </div>
-
-                                                
-                                                <input type="hidden" name="server" value="other">
-                                                <input type="hidden" name="category" value="account">
-                                                <input type="hidden" name="purchase" value="donate_restore">
-
-                                                <input type="hidden" name="modalTemplate"
-                                                       value="Покупка услуги «Восстановление аккаунта»">
-                                                
-                                            </div>
-                                        
-                                        
-                                            <div class="item-id" data-modal="paymodal">
-                                                <div class="image" style="background-image: url(https://i.imgur.com/x9rbyn2.png);"></div>
-                                                <div class="title">Восстановление прав</div>
-                                                <div class="price">349 <i
-                                                        class="fa fa-ruble col-black"></i></div>
-                                                <div class="discount">-90%
-                                                </div>
-
-                                                
-                                                <input type="hidden" name="server" value="other">
-                                                <input type="hidden" name="category" value="account">
-                                                <input type="hidden" name="purchase" value="perms_restore">
-
-                                                <input type="hidden" name="modalTemplate"
-                                                       value="Покупка услуги «Восстановление прав»">
-                                                
-                                            </div>
-                                        
-                                        
-                                            <div class="item-id" data-modal="paymodal">
-                                                <div class="image" style="background-image: url(https://i.imgur.com/C7qdxdA.png);"></div>
-                                                <div class="title">Цветной ник</div>
-                                                <div class="price">299 <i
-                                                        class="fa fa-ruble col-black"></i></div>
-                                                <div class="discount">-90%
-                                                </div>
-
-                                                
-                                                <input type="hidden" name="server" value="other">
-                                                <input type="hidden" name="category" value="account">
-                                                <input type="hidden" name="purchase" value="color_nickname">
-
-                                                <input type="hidden" name="modalTemplate"
-                                                       value="Покупка услуги «Цветной ник»">
-                                                
-                                            </div>
-                                        
-                                        
-                                            <div class="item-id" data-modal="paymodal">
-                                                <div class="image" style="background-image: url(https://i.imgur.com/M9oj3FN.png);"></div>
-                                                <div class="title">Суффикс</div>
-                                                <div class="price">499 <i
-                                                        class="fa fa-ruble col-black"></i></div>
-                                                <div class="discount">-90%
-                                                </div>
-
-                                                
-                                                <input type="hidden" name="server" value="other">
-                                                <input type="hidden" name="category" value="account">
-                                                <input type="hidden" name="purchase" value="suffix">
-
-                                                <input type="hidden" name="modalTemplate"
-                                                       value="Покупка услуги «Суффикс»">
-                                                
-                                            </div>
-                                        
-                                        
-                                            <div class="item-id" data-modal="paymodal">
-                                                <div class="image" style="background-image: url(https://i.imgur.com/UqhVX70.png);"></div>
-                                                <div class="title">Сохранение региона</div>
-                                                <div class="price">199 <i
-                                                        class="fa fa-ruble col-black"></i></div>
-                                                <div class="discount">-90%
-                                                </div>
-
-                                                
-                                                <input type="hidden" name="server" value="other">
-                                                <input type="hidden" name="category" value="account">
-                                                <input type="hidden" name="purchase" value="region_save">
-
-                                                <input type="hidden" name="modalTemplate"
-                                                       value="Покупка услуги «Сохранение региона»">
-                                                
-                                            </div>
-                                        
-                                        
-                                            <div class="item-id" data-modal="paymodal">
-                                                <div class="image" style="background-image: url(https://i.imgur.com/ShTzPPC.png);"></div>
-                                                <div class="title">Сброс гранта</div>
-                                                <div class="price">459 <i
-                                                        class="fa fa-ruble col-black"></i></div>
-                                                <div class="discount">-90%
-                                                </div>
-
-                                                
-                                                <input type="hidden" name="server" value="other">
-                                                <input type="hidden" name="category" value="account">
-                                                <input type="hidden" name="purchase" value="grant_rollback">
-
-                                                <input type="hidden" name="modalTemplate"
-                                                       value="Покупка услуги «Сброс гранта»">
-                                                
-                                            </div>
-                                        
-                                    </div>
-                                </div>
-                            
-                            
-                                <div class="tab-id" data-id="punishments">
-                                    <div class="category-text pb-20">
-                                        <div class="panel">Если вам выдала наказание администрация, цена разбана и размута выше.</div>
-                                    </div>
-
-                                    <div class="items">
-                                        
-                                            <div class="item-id" data-modal="paymodal">
-                                                <div class="image" style="background-image: url(https://i.imgur.com/OCWqefI.png);"></div>
-                                                <div class="title">Разбан</div>
-                                                <div class="price">99 <i
-                                                        class="fa fa-ruble col-black"></i></div>
-                                                <div class="discount">-90%
-                                                </div>
-
-                                                
-                                                <input type="hidden" name="server" value="other">
-                                                <input type="hidden" name="category" value="punishments">
-                                                <input type="hidden" name="purchase" value="unban">
-
-                                                <input type="hidden" name="modalTemplate"
-                                                       value="Покупка услуги «Разбан»">
-                                                
-                                            </div>
-                                        
-                                        
-                                            <div class="item-id" data-modal="paymodal">
-                                                <div class="image" style="background-image: url(https://i.imgur.com/xKi37w0.png);"></div>
-                                                <div class="title">Размут</div>
-                                                <div class="price">49 <i
-                                                        class="fa fa-ruble col-black"></i></div>
-                                                <div class="discount">-90%
-                                                </div>
-
-                                                
-                                                <input type="hidden" name="server" value="other">
-                                                <input type="hidden" name="category" value="punishments">
-                                                <input type="hidden" name="purchase" value="unmute">
-
-                                                <input type="hidden" name="modalTemplate"
-                                                       value="Покупка услуги «Размут»">
-                                                
-                                            </div>
-                                        
-                                    </div>
-                                </div>
-                            
-                        </div>
-                    </div>
-                </div>
-            
-        </div>
-    </div>
-
-    <div class="payments">
-        <div class="blockname">Последние покупки</div>
-        <div class="payment-list">
-            <div class="payment-id window item-id" style="display: block;">
-                <div class="image" style="background-image: url(https://i.imgur.com/ABZ845H.png);"></div>
-                <div class="title">5 ключей</div>
-                <div class="player">─ TuGra__</div>
-                <div class="price" style="display: none;">49 <i
-                        class="fa fa-ruble col-black"></i></div>
-                
-            </div>
-            <div class="payment-id window item-id" style="display: block;">
-                <div class="image" style="background-image: url(https://i.imgur.com/nTm5TSf.png);"></div>
-                <div class="title">5000 токенов</div>
-                <div class="player">─ Ilyusha777</div>
-                <div class="price" style="display: none;">50 <i
-                        class="fa fa-ruble col-black"></i></div>
-                
-            </div>
-            <div class="payment-id window item-id" style="display: block;">
-                <div class="image" style="background-image: url(https://i.imgur.com/nTm5TSf.png);"></div>
-                <div class="title">5000 токенов</div>
-                <div class="player">─ Ilyusha777</div>
-                <div class="price" style="display: none;">50 <i
-                        class="fa fa-ruble col-black"></i></div>
-                
-            </div>
-            <div class="payment-id window item-id" style="display: block;">
-                <div class="image" style="background-image: url(https://i.imgur.com/T764Z65.png);"></div>
-                <div class="title">[ХЕЛПЕР]</div>
-                <div class="player">─ Barakyba</div>
-                <div class="price" style="display: none;">1030 <i
-                        class="fa fa-ruble col-black"></i></div>
-                
-            </div>
-            <div class="payment-id window item-id" style="display: block;">
-                <div class="image" style="background-image: url(https://i.imgur.com/QWELePQ.png);"></div>
-                <div class="title">Ключи с монетками</div>
-                <div class="player">─ 099WLF</div>
-                <div class="price" style="display: none;">78 <i
-                        class="fa fa-ruble col-black"></i></div>
-                <div class="amount">x2</div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="modal" data-id="paymodal">
-    <div class="wrapper">
-        <form id="buyform" name="payment" method="post" action="/api/v1/payment/createPayment"
-              class="modal-content">
-            <div class="modal-header text-center text-bold"></div>
-
-            <input type="hidden" name="server" value="">
-            <input type="hidden" name="category" value="">
-            <input type="hidden" name="purchase" value="">
-            <input type="hidden" name="payment_id" value="">
-            <input type="hidden" name="code" value="">
-            <input type="hidden" name="method" value="">
-            <input type="hidden" name="phone" value="">
-
-            <div class="modal-body">
-                <div class="input-block">
-                    <label for="username">Укажите ваш никнейм на сервере</label>
-                    <input type="text" name="username" id="username" placeholder="ВВЕДИТЕ НИКНЕЙМ" value="">
-                </div>
-                <div id="amounted" style="display: none">
-                    <br>
-                    <div class="input-block">
-                        <label for="amount">Укажите кол-во товара</label>
-                        <input type="number" min="1" step="1" name="amount" id="amount" value="1"
-                               placeholder="ВВЕДИТЕ КОЛ-ВО">
-                    </div>
-                </div>
-                <div id="promo" style="display: none">
-                    <br>
-                    <div class="input-block">
-                        <label for="promo_code">Укажите промо-код, если он у вас есть</label>
-                        <input type="text" name="promo_code" id="promo_code" value="MARCH8" placeholder="ВВЕДИТЕ ПРОМО-КОД">
-                    </div>
-                </div>
-                <div class="input-block">
-                    <br>
-                    <label for="email" class="cursor-pointer" style="text-align: left;">
-                        <i style="color: #FF5722; margin-right: 5px;" class="fa fa-file-text"></i>
-                        <a onclick="$('.email-input').toggle();">Нажмите, если вам нужен чек</a>.
-                    </label>
-                </div>
-                <div class="email-input" style="display: none;">
-                    <div class="input-block">
-                        <label for="email">Введите свой Email</label>
-                        <input type="email" name="email" id="email" placeholder="ВВЕДИТЕ ПОЧТУ">
-                    </div>
-                    <br>
-                </div>
-                <div class="input-block">
-                    <label style="text-align: left;">
-                        <img style="height: 12px; width: 12px; margin-right: 5px;" src="/styles/img/checkbox.svg?2"/>
-                        Согласен с <a href="/offer">пользовательским соглашением</a>.
-                    </label>
-                </div>
-            </div>
-
-            <div class="modal-footer text-right">
-                <button class="btn pay-btn text-upper" type="submit">Оплатить</button>
-
-                <button data-modal-close class="btn text-upper btn-clear">Закрыть</button>
-            </div>
-        </form>
-    </div>
-</div>
-<div class="modal" data-id="methodmodal">
-    <div class="wrapper">
-        <form id="methodform" class="modal-content">
-            <div class="modal-header text-center text-bold">Выберите способ оплаты</div>
-            <ul class="methods">
-                <li>
-                    <button class="btn block w-100" type="button" data-type="TINKOFF_CARD" data-pic="TINKOFF_CARD" title="Банковская карта (РФ)" number-modal="false">
-                            <span class="subtext">#1</span>
-                            <span class="flag ru"></span>
-                    </button>
-                </li>
-                <li>
-                    <button class="btn block w-100" type="button" data-type="YANDEX_MONEY_ACCOUNT" data-pic="YANDEX_MONEY_ACCOUNT" title="ЮMoney" number-modal="false">
-                            
-                            
-                    </button>
-                </li>
-                <li>
-                    <button class="btn block w-100" type="button" data-type="ANYPAY_MEGAFON" data-pic="ANYPAY_MEGAFON" title="МегаФон" number-modal="false">
-                            
-                            
-                    </button>
-                </li>
-                <li>
-                    <button class="btn block w-100" type="button" data-type="ANYPAY_BEELINE" data-pic="ANYPAY_BEELINE" title="Билайн" number-modal="false">
-                            
-                            
-                    </button>
-                </li>
-                <li>
-                    <button class="btn block w-100" type="button" data-type="ANYPAY_TELE2" data-pic="ANYPAY_TELE2" title="Теле2" number-modal="false">
-                            
-                            
-                    </button>
-                </li>
-                <li>
-                    <button class="btn block w-100" type="button" data-type="ANYPAY_BITCOIN" data-pic="ANYPAY_BITCOIN" title="Криптовалюта" number-modal="false">
-                            
-                            
-                    </button>
-                </li>
-                <li>
-                    <button class="btn block w-100" type="button" data-type="FREEKASSA_STEAMPAY" data-pic="FREEKASSA_STEAMPAY" title="SteamPay" number-modal="false">
-                            
-                            
-                    </button>
-                </li>
-            </ul>
-            
-                <div class="methods-text">Для оплаты с иностранных карт используйте другой метод оплаты картой</div>
-
-                <ul class="methods">
-                    <li>
-                        <button class="btn block w-100" type="button" data-type="ANYPAY_CARD" data-pic="ANYPAY_CARD" title="Банковская карта (Казахстан)" number-modal="false">
-                            <span class="subtext">#2</span>
-                            <span class="flag kz"></span>
-                        </button>
-                    </li>
-                    <li>
-                        <button class="btn block w-100" type="button" data-type="FREEKASSA_UA" data-pic="FREEKASSA_UA" title="Банковская карта (Украина)" number-modal="false">
-                            <span class="subtext">#3</span>
-                            <span class="flag ua"></span>
-                        </button>
-                    </li>
-                </ul>
-            
-        </form>
-    </div>
-</div>
-<div class="modal" data-id="numbermodal">
-    <div class="wrapper">
-        <form id="numbermodal" class="modal-content">
-            <div class="modal-header text-center text-bold">Введите номер телефона</div>
-
-            <div class="pt-20">
-                <div class="input-block" id="phone-number-block">
-                    <div class="input-prepend">+7</div>
-                    <input type="text" maxlength="10" id="phone-number" placeholder="Без кода страны: 9876543210">
-                </div>
-            </div>
-
-            <div class="text-center pt-20">
-                <button class="btn block w-100" type="submit">Подтвердить</button>
-            </div>
-        </form>
-    </div>
-</div>
-<div class="modal" data-id="verifymodal">
-    <div class="wrapper">
-        <form id="verifymodal" class="modal-content">
-            <div class="modal-header text-center text-bold">Введите проверочный код</div>
-
-            <div class="pt-20">
-                <div class="input-block" id="verify-number-block">
-                    <input type="text" maxlength="10" id="verify-number" placeholder="Цифры из СМС">
-                </div>
-            </div>
-
-            <div class="text-center pt-20">
-                <button class="btn block w-100" type="submit">Подтвердить</button>
-            </div>
-        </form>
-    </div>
-</div>
-<footer>
-    <div class="container">
-        <div class="block-left">
-            <a href="/" class="logo" rel="nofollow">
-                <div class="block-left">
-                    <div class="logo-lt">G</div>
-                    <div class="logo-rb">C</div>
-                </div>
-                <div class="block-logo-right">
-                    <span class="col-deep-purple">G</span>rief<span class="col-black">C</span>raft
-                </div>
-            </a>
-        </div>
-
-        <div class="block-center">
-            <div>Copyright © GriefCraft 2025. Все права защищены. Сервер GriefCraft не относится к Mojang Studios.</div>
-            <div>Для получения дополнительной информации и помощи обратитесь по адресу: <a href="mailto:contact@griefcraft.net" class="text-warning" target="_blank">contact@griefcraft.net</a></div>
-            <div>ИП Русаков Вадим Евгеньевич (ИНН 503109909523, ОГРНИП 325508100047750)</div>
-            <a href="/offer">Договор-оферта</a> | <a href="/privacy">Политика обработки персональных данных</a> | <a href="/paymentProcessGuide">Порядок проведения оплаты и безопасность операций</a>
-        </div>
-
-    </div>
-</footer>
+    <nav class="menu">
+        <ul class="menu-items">
+            <li><a href="#about-me">Обо мне</a></li>
+            <li><a href="#my-work">Моя работа</a></li>
+            <li><a href="#contact">Контакт</a></li>
+        </ul>
+    </nav>
+    
+    <section id="about-me" class="section">
+        <h2>Обо мне</h2>
+        <p>Здравствуйте! Меня зовут [Ваше имя], и я занимаюсь разработкой веб-приложений. Моя страсть — создание интерактивных и удобных интерфейсов, которые приносят радость пользователям.</p>
+    </section>
+    
+    <section id="my-work" class="section">
+        <h2>Моя работа</h2>
+        <p>На протяжении нескольких лет я разрабатываю веб-сайты и приложения, используя современные технологии и подходы. Я верю, что каждый проект уникален и требует индивидуального подхода.</p>
+    </section>
+    
+    <section id="contact" class="section">
+        <h2>Контакт</h2>
+        <p>Если у вас есть предложения или идеи для сотрудничества, пожалуйста, свяжитесь со мной по электронной почте или через социальные сети.</p>
+    </section>
+
+    <script src="scrollspy.js"></script>
+    <script src="smoothscroll.js"></script>
+    <script>
+        // Скрипт для плавной прокрутки
+        document.querySelectorAll('.menu a').forEach(link => {
+            link.addEventListener('click', e => {
+                e.preventDefault();
+                document.querySelector(e.target.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 </body>
 </html>
+
+CSS
+
+/* Основные стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #000;
+    color: #fff;
+    scroll-behavior: smooth;
+}
+
+.menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.menu-items {
+    display: flex;
+    list-style: none;
+}
+
+.menu-items li {
+    margin: 0 10px;
+}
+
+.menu-items li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.menu-items li a:hover {
+    color: darkred;
+}
+
+/* Эффекты наведения */
+.menu-items li a::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: darkred;
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.3s ease;
+}
+
+.menu-items li a:hover::before {
+    visibility: visible;
+    transform: scaleX(1);
+}
+
+/* Стилизация секций */
+.section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 20px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.section h2 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.section p {
+    font-size: 18px;
+    line-height: 1.5;
+    text-align: center;
+}
+
+/* Параллакс */
+#about-me {
+    background-image: url('images/about-me.jpg');
+}
+
+#my-work {
+    background-image: url('images/my-work.jpg');
+}
+
+#contact {
+    background-image: url('images/contact.jpg');
+}
+
+/* Плавное появление */
+.section h2,
+.section p {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease;
+}
+
+.show .section h2,
+.show .section p {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Тени */
+.section::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.75));
+    z-index: 1;
+}
+
+/* Анимация элементов */
+.menu-items li a {
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.menu-items li a::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: darkred;
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.3s ease;
+}
+
+.menu-items li a:hover::before {
+    visibility: visible;
+    transform: scaleX(1);
+}
+// Скрипт для плавной прокрутки
+document.querySelectorAll('.menu a').forEach(link => {
+    link.addEventListener('click', e => {
+        e.preventDefault();
+        document.querySelector(e.target.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
