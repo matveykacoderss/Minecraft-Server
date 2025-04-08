@@ -3,209 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Меню "Обо мне"</title>
     <link rel="stylesheet" href="styles.css">
+    <title>Донаты в Minecraft</title>
 </head>
 <body>
-    <nav class="menu">
-        <ul class="menu-items">
-            <li><a href="#about-me">Обо мне</a></li>
-            <li><a href="#my-work">Моя работа</a></li>
-            <li><a href="#contact">Контакт</a></li>
-        </ul>
-    </nav>
-    
-    <section id="about-me" class="section">
-        <h2>Обо мне</h2>
-        <p>Здравствуйте! Меня зовут [Ваше имя], и я занимаюсь разработкой веб-приложений. Моя страсть — создание интерактивных и удобных интерфейсов, которые приносят радость пользователям.</p>
-    </section>
-    
-    <section id="my-work" class="section">
-        <h2>Моя работа</h2>
-        <p>На протяжении нескольких лет я разрабатываю веб-сайты и приложения, используя современные технологии и подходы. Я верю, что каждый проект уникален и требует индивидуального подхода.</p>
-    </section>
-    
-    <section id="contact" class="section">
-        <h2>Контакт</h2>
-        <p>Если у вас есть предложения или идеи для сотрудничества, пожалуйста, свяжитесь со мной по электронной почте или через социальные сети.</p>
+    <header>
+        <h1>Донаты в Minecraft</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">О нас</a></li>
+                <li><a href="#packages">Пакеты</a></li>
+                <li><a href="#contact">Контакты</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="about">
+        <h2>О нас</h2>
+        <p>Мы предлагаем уникальные возможности для донатов в Minecraft. Поддержите наш сервер и получите эксклюзивные привилегии!</p>
     </section>
 
-    <script src="scrollspy.js"></script>
-    <script src="smoothscroll.js"></script>
-    <script>
-        // Скрипт для плавной прокрутки
-        document.querySelectorAll('.menu a').forEach(link => {
-            link.addEventListener('click', e => {
-                e.preventDefault();
-                document.querySelector(e.target.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-    </script>
+    <section id="packages">
+        <h2>Доступные пакеты</h2>
+        <div class="package">
+            <h3>Базовый пакет</h3>
+            <p>Цена: 5$</p>
+            <button>Купить</button>
+        </div>
+        <div class="package">
+            <h3>Продвинутый пакет</h3>
+            <p>Цена: 10$</p>
+            <button>Купить</button>
+        </div>
+        <div class="package">
+            <h3>Премиум пакет</h3>
+            <p>Цена: 20$</p>
+            <button>Купить</button>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <h2>Контакты</h2>
+        <p>Email: support@minecraftdonate.com</p>
+        <p>Телефон: +1234567890</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
-
-CSS
-
-/* Основные стили */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-}
-
-body {
-    background-color: #000;
-    color: #fff;
-    scroll-behavior: smooth;
-}
-
-.menu {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 999;
-}
-
-.menu-items {
-    display: flex;
-    list-style: none;
-}
-
-.menu-items li {
-    margin: 0 10px;
-}
-
-.menu-items li a {
-    color: #fff;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.menu-items li a:hover {
-    color: darkred;
-}
-
-/* Эффекты наведения */
-.menu-items li a::before {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    background-color: darkred;
-    visibility: hidden;
-    transform: scaleX(0);
-    transition: all 0.3s ease;
-}
-
-.menu-items li a:hover::before {
-    visibility: visible;
-    transform: scaleX(1);
-}
-
-/* Стилизация секций */
-.section {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 100px 20px;
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
-}
-
-.section h2 {
-    font-size: 48px;
-    margin-bottom: 20px;
-}
-
-.section p {
-    font-size: 18px;
-    line-height: 1.5;
-    text-align: center;
-}
-
-/* Параллакс */
-#about-me {
-    background-image: url('images/about-me.jpg');
-}
-
-#my-work {
-    background-image: url('images/my-work.jpg');
-}
-
-#contact {
-    background-image: url('images/contact.jpg');
-}
-
-/* Плавное появление */
-.section h2,
-.section p {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all 0.5s ease;
-}
-
-.show .section h2,
-.show .section p {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* Тени */
-.section::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.75));
-    z-index: 1;
-}
-
-/* Анимация элементов */
-.menu-items li a {
-    position: relative;
-    transition: color 0.3s ease;
-}
-
-.menu-items li a::before {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    background-color: darkred;
-    visibility: hidden;
-    transform: scaleX(0);
-    transition: all 0.3s ease;
-}
-
-.menu-items li a:hover::before {
-    visibility: visible;
-    transform: scaleX(1);
-}
-// Скрипт для плавной прокрутки
-document.querySelectorAll('.menu a').forEach(link => {
-    link.addEventListener('click', e => {
-        e.preventDefault();
-        document.querySelector(e.target.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
-    });
-});
